@@ -1,0 +1,1 @@
+{"name":"Local: shortestpath","url":"c:\\Users\\91892\\VSCode folders\\CP\\100 Days\\57\\shortestpath.java","tests":[{"id":1672343591575,"input":"3\n3\n1\n3\n1\n1\n5\n1\n4\n2\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91892\\VSCode folders\\CP\\100 Days\\57\\shortestpath.java","group":"local","local":true}
