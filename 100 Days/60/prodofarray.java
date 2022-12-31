@@ -44,7 +44,7 @@ array is always 1 */
 
 		return;
 	}
-    void productsinglearray(int arr[], int n)
+    static void productsinglearray(int arr[], int n)
     {
  
         // Base case
@@ -96,6 +96,7 @@ array is always 1 */
             arr[i] = sc.nextInt();
         }
 		productArray(arr, n);
+        productsinglearray(arr,n);
 	}
 }
 
