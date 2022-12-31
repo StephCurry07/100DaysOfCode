@@ -1,10 +1,9 @@
+import java.util.Arrays;
 import java.util.Scanner;
 class prodofarray {
 	/* Function to print product array
 	for a given array arr[] of size n */
-	static void productArray(int arr[], int n)
-	{
-
+	static void productArray(int arr[], int n){
 		// Base case
 		if (n == 1) {
 			System.out.print(0);
@@ -44,9 +43,7 @@ array is always 1 */
 
 		return;
 	}
-    static void productsinglearray(int arr[], int n)
-    {
- 
+    static void productsinglearray(int arr[], int n){
         // Base case
         if (n == 1) {
             System.out.print("0");
@@ -85,6 +82,23 @@ array is always 1 */
  
         return;
     }
+    static void myans(int[] arr, int a){
+        int ans[] = new int[arr.length];
+        Arrays.setAll(ans, i->1);
+        ans[0] = arr[0];
+        for(int i = 1; i < arr.length; i++){
+            ans[i] = ans[i-1] * arr[i];
+        }
+        ans[arr.length - 1] = ans[arr.length - 2];
+        int product = 1;
+        for(int i = arr.length - 1; i > 0; i--){
+            ans[i] = ans[i-1] * product;
+            product = product * arr[i];
+        }
+        ans[0] = product;
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(ans[i] + " ");
+    }
 	/* Driver program to test the above function */
 	public static void main(String[] args)
 	{
@@ -95,8 +109,11 @@ array is always 1 */
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
-		productArray(arr, n);
-        productsinglearray(arr,n);
+		// productArray(arr, n);
+
+
+        // productsinglearray(arr,n);
+        myans(arr, n);
 	}
 }
 
