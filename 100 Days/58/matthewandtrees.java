@@ -1,6 +1,27 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+class Tree {
+    static class Node {
+        int value;
+        Node left, right;
+
+        Node(int value) {
+            this.value = value;
+            left = null;
+            right = null;
+        }
+    }
+
+    public void insert(Node node, int value, int loc) {
+        if(loc%2 == 0)
+            node.left = new Node(value);
+        else
+            node.right = new Node(value);
+    }
+}
+
 public class matthewandtrees{
     public static void main(String[] args) {
         int n;
@@ -12,26 +33,6 @@ public class matthewandtrees{
             arr[i] = sc.nextInt();
         }
         int height = (int) Math.ceil(Math.log(n + 1));
-        int size = 1;
-        for(int i = 0; i < height; i++){
-            int j = 0;
-            ArrayList<Integer> sub = new ArrayList<>();
-            while(j < size && (int)Math.pow(2,i) + j - 1 < n){
-                if(arr[(int)Math.pow(2,i) + j - 1] != -1){
-                    sub.add(arr[(int)Math.pow(2,i) + j - 1]);
-                }
-                j++;
-            }
-            size = size * 2;
-            al.add(sub);
-        }
-        System.out.println(height);
-        for (int i = 0; i < al.size();i++){
-            for (int j = 0; j < al.get(i).size();j++){
-                    System.out.print(al.get(i).get(j) + " ");
-            }
-            System.out.println();
-        }
         
     }
 }
