@@ -29,6 +29,17 @@ public class minjumps{
         }
         return jumps[n - 1];
     }
+    static void optimalans(int[] arr, int n){
+        int pos = 0, des = 0,jump = 0;
+        for(int i = 0; i < n - 1; i++){
+            des = Math.max(des,arr[i] + i);
+            if(pos == i){
+                pos = des;
+                jump++;
+            }
+        }
+        System.out.print(jump);
+    }
     public static void main(String[] args) {
         int n;
         Scanner sc = new Scanner(System.in);
@@ -38,5 +49,6 @@ public class minjumps{
             arr[i] = sc.nextInt();
         }
         System.out.println(minJumps(arr,arr.length));
+        optimalans(arr, n);
     }
 }
