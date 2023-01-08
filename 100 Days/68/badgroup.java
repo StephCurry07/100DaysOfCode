@@ -22,7 +22,6 @@ public class badgroup{
             arr[i] = sc.nextInt();
         }
         Arrays.sort(arr);
-        int flag = 0;
         if(isEven(arr)){
             System.out.println(true);
             return;
